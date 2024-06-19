@@ -1,5 +1,9 @@
 # LLM-Chatbot-With-Custom-Database
 
+#### This project aims to develop a text-based Language Learning Model (LLM) chatbot designed to significantly improve the efficiency of information retrieval within the custom DATABASE! By harnessing the LLM’s capabilities, this initiative will not only enhance data analysis but also revolutionize query handling, offering a level of service previously unattainable.
+
+
+
 ### Here are the key highlights of our chatbot architecture workflow:
 
 
@@ -11,14 +15,16 @@
 6.	Database Execution: The generated SQL query is executed on the database to retrieve the requested data.
 7.	Feedback Loop: We implement a feedback loop to continuously improve our model by incorporating user feedback and analysis.
 
+### Technologies used: 
+Chainlit,Gemini Pro AI, LangChain, Vector database: ChromaDB (To store the embeddings), Embedding Model: "all-MiniLM-L6-v2", SQLAlchemy
 
-Create an environment first with these commands in the terminal window:
+### Create an environment first with these commands in the terminal window:
 
 1. python -m venv llmchabot
 2. llmchatbot\Scripts\Activate.ps1 - To activate the environment
 3. pip install -r requirements.txt
 
 
-After setting up the environment, you can run the code with the following command:
+### After setting up the environment, you can run the code with the following command:
 
 -> chainlit run main.py -w
