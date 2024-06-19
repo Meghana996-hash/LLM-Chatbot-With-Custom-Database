@@ -16,7 +16,7 @@
 7.	Feedback Loop: We implement a feedback loop to continuously improve our model by incorporating user feedback and analysis.
 
 ### Technologies used: 
-Chainlit,Gemini Pro AI, LangChain, Vector database: ChromaDB (To store the embeddings), Embedding Model: "all-MiniLM-L6-v2", SQLAlchemy
+Chainlit, Gemini Pro AI, LangChain, Vector database: ChromaDB (To store the embeddings), Embedding Model: "all-MiniLM-L6-v2", SQLAlchemy
 
 ### Create an environment first with these commands in the terminal window:
 
