@@ -1,0 +1,32 @@
+{
+    "example_pairs": [
+        {
+            "nl_query": "Calculate the total sales per country for Motorcycles.",
+            "sql_query": "SELECT COUNTRY, SUM(SALES) AS Total_Sales FROM Sales WHERE PRODUCTLINE = 'Motorcycles' GROUP BY COUNTRY ORDER BY Total_Sales DESC;"
+        },
+        {
+            "nl_query": "Find the average price each per quarter for the year 2003.",
+            "sql_query": "SELECT QTR_ID, AVG(PRICEEACH) AS Avg_PriceEach FROM Sales WHERE YEAR_ID = 2003 GROUP BY QTR_ID ORDER BY QTR_ID;"
+        },
+        {
+            "nl_query": "Find orders with sales above the average sales.",
+            "sql_query": "SELECT ORDERNUMBER, SUM(SALES) FROM Sales WHERE SALES > (SELECT AVG(SALES) FROM Sales) GROUP BY ORDERNUMBER ORDER BY SALES DESC;"
+        },
+        {
+            "nl_query": "Retrieve orders along with contact information for the Motorcycles product line.",
+            "sql_query": "SELECT ORDERNUMBER, QUANTITYORDERED, PRICEEACH, SALES, ORDERDATE, CONTACTLASTNAME, CONTACTFIRSTNAME, PHONE, ADDRESSLINE1, CITY, STATE, POSTALCODE, COUNTRY FROM Sales WHERE PRODUCTLINE = 'Motorcycles' ORDER BY ORDERDATE;"
+        },
+        {
+            "nl_query": "Find the most expensive order for each customer.",
+            "sql_query": "WITH CustomerOrders AS (SELECT CONTACTLASTNAME, CONTACTFIRSTNAME, ORDERNUMBER, SALES, ROW_NUMBER() OVER (PARTITION BY CONTACTLASTNAME, CONTACTFIRSTNAME ORDER BY SALES DESC) AS RowNum FROM Sales) SELECT CONTACTLASTNAME, CONTACTFIRSTNAME, ORDERNUMBER, SALES FROM CustomerOrders WHERE RowNum = 1 ORDER BY SALES DESC;"
+        },
+        {
+            "nl_query": "Calculate the total quantity ordered by city.",
+            "sql_query": "SELECT CITY, SUM(QUANTITYORDERED) AS Total_Quantity FROM Sales GROUP BY CITY ORDER BY Total_Quantity DESC;"
+        },
+        {
+            "nl_query": "Find orders placed between May 1, 2003, and August 31, 2003.",
+            "sql_query": "SELECT ORDERNUMBER, QUANTITYORDERED, PRICEEACH, SALES, ORDERDATE, CONTACTLASTNAME, CONTACTFIRSTNAME FROM Sales WHERE ORDERDATE BETWEEN '2003-05-01' AND '2003-08-31' ORDER BY ORDERDATE;"
+        }
+    ]
+}
